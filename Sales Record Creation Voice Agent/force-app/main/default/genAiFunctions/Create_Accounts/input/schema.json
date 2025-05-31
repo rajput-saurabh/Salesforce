@@ -1,0 +1,182 @@
+{
+  "required" : [ "name" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "accountNumber" : {
+      "title" : "Account Number",
+      "description" : "Unique identifier or number for the account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "annualRevenue" : {
+      "title" : "Annual Revenue",
+      "description" : "Annual revenue of the account.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "billingCity" : {
+      "title" : "Billing City",
+      "description" : "City for billing purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "billingCountry" : {
+      "title" : "Billing Country",
+      "description" : "Country for billing purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "billingPostalCode" : {
+      "title" : "Billing Zip/Postal Code",
+      "description" : "Zip or postal code for billing purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "billingState" : {
+      "title" : "Billing State/Province",
+      "description" : "State or province for billing purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "billingStreet" : {
+      "title" : "Billing Street",
+      "description" : "Street address for billing purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "description" : {
+      "title" : "Description",
+      "description" : "A general description or notes about the account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "fax" : {
+      "title" : "Fax",
+      "description" : "Fax number for the account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "industry" : {
+      "title" : "Industry",
+      "description" : "Primary industry of the account (e.g., \"Technology\", \"Finance\"). Must be a valid picklist value.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "name" : {
+      "title" : "Account Name",
+      "description" : "Name of the new account (e.g., \"Global Corp Inc.\").",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "numberOfEmployees" : {
+      "title" : "Number of Employees",
+      "description" : "Total number of employees at the account.",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "ownership" : {
+      "title" : "Ownership",
+      "description" : "Ownership structure of the account (e.g., \"Public\", \"Private\"). Must be a valid picklist value.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "parentId" : {
+      "title" : "Parent Account ID",
+      "description" : "The 15 or 18-character ID of the parent Account for this account. Optional.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "phone" : {
+      "title" : "Phone",
+      "description" : "Primary phone number for the account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingCity" : {
+      "title" : "Shipping City",
+      "description" : "City for shipping purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingCountry" : {
+      "title" : "Shipping Country",
+      "description" : "Country for shipping purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingPostalCode" : {
+      "title" : "Shipping Zip/Postal Code",
+      "description" : "Zip or postal code for shipping purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingState" : {
+      "title" : "Shipping State/Province",
+      "description" : "State or province for shipping purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "shippingStreet" : {
+      "title" : "Shipping Street",
+      "description" : "Street address for shipping purposes.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "sicCode" : {
+      "title" : "SIC Code",
+      "description" : "Standard Industrial Classification code for the account.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "site" : {
+      "title" : "Account Site",
+      "description" : "The specific location or site of the account (e.g., \"Headquarters\", \"Main Branch\").",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "tickerSymbol" : {
+      "title" : "Ticker Symbol",
+      "description" : "Stock market ticker symbol for the account, if applicable.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "type" : {
+      "title" : "Account Type",
+      "description" : "Type of account (e.g., \"Prospect\", \"Customer - Direct\", \"Partner\"). Must be a valid picklist value.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "website" : {
+      "title" : "Website",
+      "description" : "Website URL for the account (e.g., \"http://www.globalcorp.com\").",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

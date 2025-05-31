@@ -1,0 +1,31 @@
+<template>
+    <div class="voice-agent-container slds-var-p-around_medium">
+        <div class="mic-button-wrapper">
+            <template if:true={isListening}>
+                <div class="listening-ring ring1"></div>
+                <div class="listening-ring ring2"></div>
+                <div class="listening-ring ring3"></div>
+            </template>
+
+            <lightning-button-icon
+                icon-name={micButtonIcon}
+                variant="bare"
+                onclick={handleVoiceButtonClick}
+                disabled={isProcessingVisuals}
+                class={micButtonClass}
+                size="large"
+                alternative-text={micButtonAlternativeText}
+            ></lightning-button-icon>
+        </div>
+
+        <div class="status-display slds-var-m-top_medium">
+            <p>{statusMessage}</p>
+        </div>
+
+        <template if:true={showProcessingSpinner}>
+            <div class.bind="spinnerContainerClass">
+                 <lightning-spinner alternative-text="Processing..." size="medium" variant="brand"></lightning-spinner>
+                 </div>
+        </template>
+    </div>
+</template>

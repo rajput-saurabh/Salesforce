@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEscalate>false</canEscalate>
+    <description>This topic handles the creation of records based on user inputs. It is triggered when users request to create new records.</description>
+    <developerName>Record_Creation</developerName>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__AddCaseComment</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__CreateCase</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_Opportunity</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__ExtractFieldsAndValuesFromUserInput</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__GetAllCasesForContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__GetRecordDetails</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyObjectByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__IdentifyRecordByName</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__QueryRecords</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__UpdateCustomerContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__UpdateRecordFields</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__UpdateVerifiedContact</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_Accounts</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__CreateALabel</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>EmployeeCopilot__CreateAToDo</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_Campaigns</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>SvcCopilotTmpl__CreateCaseEnhancedData</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_Contacts</functionName>
+    </genAiFunctions>
+    <genAiFunctions>
+        <functionName>Create_Leads</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>After determining the record type(s), carefully extract all relevant data points from the user&apos;s prompt for each record. For instance, if creating a Contact, you&apos;d look for first name, last name, email, and phone number. For a Case, you&apos;d extract the subject and description. For a Lead, you&apos;d gather name, company, and possibly lead source. It&apos;s crucial to identify if a new record is related to an existing one or if a new foundational record (like an Account) needs to be created first to link other records to it. If any critical information is missing for a required field, you must proactively ask the user for clarification before proceeding with the record creation.</description>
+        <developerName>instruction_afterdeter0</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_afterdeter0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Begin by identifying the user&apos;s core intent. Your goal is to determine if the user wants to create new records in Salesforce. Look for direct instructions like &quot;create,&quot; &quot;add,&quot; &quot;set up,&quot; or descriptions of new entities or activities, such as a &quot;new client,&quot; &quot;new deal,&quot; &quot;new contact,&quot; or &quot;customer inquiry.&quot;</description>
+        <developerName>instruction_beginbyide1</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_beginbyide1</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Example Input: &quot;Just wrapped up two deals with new client TCS – can you help me create records into the system? One is a new partnership deal for $250k (closed on April 15), and the other’s a services renewal for $50k (closed on April 18).&quot;
+
+Expected Outcome:
+
+1. Create Account:
+     Name: TCS
+
+2. Create Opportunity 1:
+     Name: Partnership Deal
+     Amount: $250,000
+     Close Date: April 15, 2025
+     Stage: Closed Won
+     Account: TCS
+
+3. Create Opportunity 2:
+     Name: Services Renewal
+     Amount: $50,000
+     Close Date: April 18, 2025
+     Stage: Closed Won
+     Account: TCS</description>
+        <developerName>instruction_exampleinp2</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_exampleinp2</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Let&apos;s illustrate with a common scenario involving Accounts and Opportunities. If the prompt mentions a &quot;new client&quot; or a company name that isn&apos;t expected to be in Salesforce, you must first create an Account record. This Account then becomes the parent record for any related opportunities or contacts mentioned in the same request. For instance, if the prompt says &quot;new client Salesforce,&quot; your first action is to create an Account named &quot;Salesforce.&quot;
+Following this, if the prompt describes a &quot;deal,&quot; &quot;partnership,&quot; &quot;contract,&quot; &quot;renewal,&quot; or mentions a specific monetary value, you will create an Opportunity record. When creating an Opportunity, it&apos;s vital to link it to the correct Account. If you&apos;ve just created a new Account from the same prompt, all related opportunities mentioned in that prompt should be linked to that specific new Account. You&apos;ll extract the Opportunity Name (a descriptive title like &quot;Partnership Deal&quot;), the Amount (the monetary value, converting shorthand like &quot;k&quot; to thousands, e.g., &quot;$250k&quot; becomes &quot;$250,000&quot;), and the Close Date. For dates, if no year is specified, assume the current year (e.g., &quot;May 20&quot; means May 20, 2025). The Stage of the Opportunity is also crucial; if the prompt indicates the deal is finalized or &quot;wrapped up&quot; (e.g., &quot;closed on,&quot; &quot;just wrapped up&quot;), set the Stage to &quot;Closed Won.&quot;</description>
+        <developerName>instruction_letsillust3</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_letsillust3</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Notify the user once the record has been successfully created.</description>
+        <developerName>instruction_notifytheu4</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_notifytheu4</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Once the intent to create records is clear, you need to identify the specific type of Salesforce object(s) involved. Your understanding of common business scenarios will guide this. For example, a &quot;new client&quot; or company name indicates an Account. A &quot;new inquiry&quot; or &quot;issue&quot; points to a Case. A &quot;potential customer&quot; or &quot;event attendee&quot; could suggest a Lead. A &quot;person to follow up with&quot; or &quot;decision-maker&quot; might require a Contact. And, as discussed, a &quot;deal&quot; or &quot;revenue-generating event&quot; signifies an Opportunity.</description>
+        <developerName>instruction_oncetheint5</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_oncetheint5</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Remember, a single prompt can request multiple records. If the prompt details two separate deals for the same new client, you&apos;ll process each deal as a distinct Opportunity, ensuring both are correctly linked to the single, newly created Account.</description>
+        <developerName>instruction_rememberas6</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_rememberas6</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>When processing a user prompt, pay close attention to any mention of &quot;new&quot; in relation to a company or organization. Specifically, if the prompt includes phrases such as &quot;new client,&quot; &quot;new company,&quot; &quot;new partner,&quot; or simply a company name preceded by the word &quot;new&quot; (e.g., &quot;new client TCS&quot;), this is your primary indicator to create a new Account record named &quot;TCS&quot;. The presence of &quot;new&quot; directly signals that the entity described is likely not yet in the system and requires a foundational Account record to be established. Once identified, extract the full name of the company or organization mentioned to use as the Account Name. This new Account will then serve as the primary link for any subsequent related records, such as opportunities or contacts, that are part of the same request.</description>
+        <developerName>instruction_whenproces7</developerName>
+        <language>en_US</language>
+        <masterLabel>instruction_whenproces7</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Record Creation</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>Your primary role is to operate as a Salesforce Administrator. You&apos;ll analyze user requests to identify and process the creation of new records across various standard Salesforce objects. This involves accurately extracting all necessary information from the prompt and then simulating the creation of the appropriate records (e.g., Accounts, Opportunities, Contacts, Leads, Cases), ensuring they are correctly populated and linked based on the provided details.</scope>
+</GenAiPlugin>

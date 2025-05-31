@@ -1,0 +1,196 @@
+/* :host selector targets the LWC's shadow DOM host element.
+  'display: block' ensures the component behaves as a block-level element.
+  CSS Custom Properties (variables) are defined here for easy theming and reusability.
+*/
+:host {
+    display: block;
+    --agent-bg-color: #1f232a;
+    --agent-orb-bg: linear-gradient(145deg, #2a2f3a, #1a1d24);
+    --agent-orb-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+    --agent-orb-border-color: #4a505c; 
+    --agent-text-color: #e0e6f0; 
+    --listening-ring-color: #00a1ff; 
+    --processing-icon-color: #ffc107; 
+    --speaking-icon-color: #4caf50; 
+    --mic-icon-color: var(--agent-text-color);
+    --stop-icon-color: #ff4d4d; 
+}
+
+/*
+  Styles for the main container of the voice agent UI.
+*/
+.voice-agent-container {
+    background-color: var(--agent-bg-color);
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255,255,255,0.05) inset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 280px; 
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+/*
+  Wrapper for the microphone button and its listening animation rings.
+  Helps in positioning the rings absolutely relative to this wrapper.
+*/
+.mic-button-wrapper {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px; /* Orb size */
+    height: 100px;
+}
+
+/*
+  Styles for the microphone button itself (targets the lightning-button-icon).
+  The '!important' flag is used here cautiously to override SLDS default styles for a highly custom look.
+  This is generally acceptable for achieving specific visual designs with base components.
+*/
+.mic-button {
+    width: 80px !important;  
+    height: 80px !important;
+    min-width: 80px !important;
+    border-radius: 50% !important; /* Make it circular */
+    background: var(--agent-orb-bg) !important;
+    box-shadow: var(--agent-orb-shadow) !important;
+    border: 2px solid var(--agent-orb-border-color) !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for the microphone button (when not disabled) */
+.mic-button:hover:not([disabled]) {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0px 12px 30px rgba(0,161,255,0.3); 
+}
+
+/* Active (pressed) effect for the microphone button (when not disabled) */
+.mic-button:active:not([disabled]) {
+    transform: translateY(0px) scale(1);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+/*
+  Styles the SLDS icon SVG element inside the microphone button.
+*/
+.mic-button .slds-button__icon {
+    fill: var(--mic-icon-color) !important; 
+    width: 50% !important;
+    height: 50% !important;
+}
+
+/* Changes icon color when the agent is listening (typically shows a 'stop' icon). */
+.mic-button-listening .slds-button__icon {
+    fill: var(--stop-icon-color) !important; 
+}
+
+/* Changes icon color and adds animation when processing. */
+.mic-button-processing .slds-button__icon {
+    fill: var(--processing-icon-color) !important; 
+    animation: spin 1.5s linear infinite; 
+}
+
+/*
+  Styles for the listening animation rings.
+  These create a pulsing effect around the microphone button.
+*/
+.listening-ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 2px solid var(--listening-ring-color);
+    opacity: 0.7;
+    animation: pulse 2s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* Individual styling for each ring to control size and animation delay. */
+.listening-ring.ring1 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 0s;
+}
+
+.listening-ring.ring2 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 0.5s;
+}
+
+.listening-ring.ring3 {
+    width: 100px;
+    height: 100px;
+    animation-delay: 1s;
+}
+
+/* Keyframes for the 'pulse' animation: scales the rings up and fades them out. */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* Keyframes for the 'spin' animation: used for the processing icon. */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*
+  Styles for the status message display area.
+*/
+.status-display {
+    color: var(--agent-text-color);
+    font-size: 0.95rem;
+    min-height: 2.5em;
+    padding: 0 10px; 
+    font-weight: 300;
+}
+
+/*
+  Styles for the container of the lightning-spinner.
+  Allows for custom positioning if needed.
+*/
+.spinner-container {
+    position: absolute; 
+    bottom: 20px;
+}
+
+/* Utility classes bound in JS to control visibility of the spinner container */
+.spinner-container.slds-hidden {
+    display:none;
+}
+.spinner-container.slds-visible {
+    display:block;
+}
+
+/*
+  Styles for the microphone button when it's disabled.
+  Targets the [disabled] attribute of the lightning-button-icon.
+*/
+.mic-button[disabled] {
+    background: #333842 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Dims the icon color when the button is disabled. */
+.mic-button[disabled] .slds-button__icon {
+    fill: #6c757d !important;
+}

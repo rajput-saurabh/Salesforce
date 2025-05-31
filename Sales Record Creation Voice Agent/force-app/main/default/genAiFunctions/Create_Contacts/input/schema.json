@@ -1,0 +1,161 @@
+{
+  "required" : [ "lastName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "accountId" : {
+      "title" : "Account ID",
+      "description" : "ID of the Account this contact is associated with. Must be a valid 15 or 18 character Salesforce ID.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "birthdate" : {
+      "title" : "Birthdate",
+      "description" : "Birthdate of the contact. Format: YYYY-MM-DD.",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "department" : {
+      "title" : "Department",
+      "description" : "Department of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "description" : {
+      "title" : "Description",
+      "description" : "Additional notes or description for the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "email" : {
+      "title" : "Email",
+      "description" : "Email address of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "fax" : {
+      "title" : "Fax",
+      "description" : "Fax number of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "firstName" : {
+      "title" : "First Name",
+      "description" : "First name of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "lastName" : {
+      "title" : "Last Name",
+      "description" : "Last name of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "leadSource" : {
+      "title" : "Lead Source",
+      "description" : "Source of the contact (e.g., \"Web\", \"Referral\"). Must be a valid picklist API name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mailingCity" : {
+      "title" : "Mailing City",
+      "description" : "Mailing city.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mailingCountry" : {
+      "title" : "Mailing Country",
+      "description" : "Mailing country.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mailingPostalCode" : {
+      "title" : "Mailing Zip/Postal Code",
+      "description" : "Mailing zip or postal code.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mailingState" : {
+      "title" : "Mailing State/Province",
+      "description" : "Mailing state or province.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mailingStreet" : {
+      "title" : "Mailing Street",
+      "description" : "Mailing street address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mobilePhone" : {
+      "title" : "Mobile Phone",
+      "description" : "Mobile phone number of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "otherCity" : {
+      "title" : "Other City",
+      "description" : "Other city.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "otherCountry" : {
+      "title" : "Other Country",
+      "description" : "Other country.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "otherPostalCode" : {
+      "title" : "Other Zip/Postal Code",
+      "description" : "Other zip or postal code.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "otherState" : {
+      "title" : "Other State/Province",
+      "description" : "Other state or province.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "otherStreet" : {
+      "title" : "Other Street",
+      "description" : "Other street address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "phone" : {
+      "title" : "Phone",
+      "description" : "Primary phone number of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "title" : {
+      "title" : "Title",
+      "description" : "Job title of the contact.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

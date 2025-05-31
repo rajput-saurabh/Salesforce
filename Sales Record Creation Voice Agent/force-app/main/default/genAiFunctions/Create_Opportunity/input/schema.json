@@ -1,0 +1,49 @@
+{
+  "required" : [ "closeDate", "name", "stageName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "accountId" : {
+      "title" : "Account ID",
+      "description" : "The 15 or 18-character ID of the Account related to this opportunity. Optional.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "amount" : {
+      "title" : "Amount",
+      "description" : "Estimated monetary value of the opportunity. Must be a non-negative number.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "closeDate" : {
+      "title" : "Close Date",
+      "description" : "Expected date when the opportunity is anticipated to close. Format: YYYY-MM-DD.",
+      "lightning:type" : "lightning__dateType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "description" : {
+      "title" : "Description",
+      "description" : "An optional description or notes for the opportunity.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "name" : {
+      "title" : "Opportunity Name",
+      "description" : "Name of the new opportunity (e.g., \"ACME Corp Deal\").",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "stageName" : {
+      "title" : "Stage Name",
+      "description" : "Current stage of the opportunity (e.g., \"Prospecting\", \"Qualification\", \"Closed Won\"). Must be a valid picklist value.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

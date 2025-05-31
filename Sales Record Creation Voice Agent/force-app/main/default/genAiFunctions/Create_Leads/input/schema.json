@@ -1,0 +1,147 @@
+{
+  "required" : [ "company", "lastName", "status" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "annualRevenue" : {
+      "title" : "Annual Revenue",
+      "description" : "Annual revenue of the lead's company.",
+      "lightning:type" : "lightning__numberType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "city" : {
+      "title" : "City",
+      "description" : "City for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "company" : {
+      "title" : "Company",
+      "description" : "Company name for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "country" : {
+      "title" : "Country",
+      "description" : "Country for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "description" : {
+      "title" : "Description",
+      "description" : "Additional notes or description for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "email" : {
+      "title" : "Email",
+      "description" : "Email address of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "firstName" : {
+      "title" : "First Name",
+      "description" : "First name of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "industry" : {
+      "title" : "Industry",
+      "description" : "Industry of the lead. Must be a valid picklist API name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "lastName" : {
+      "title" : "Last Name",
+      "description" : "Last name of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "leadSource" : {
+      "title" : "Lead Source",
+      "description" : "Source of the lead (e.g., \"Web\", \"Phone Inquiry\"). Must be a valid picklist API name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "mobilePhone" : {
+      "title" : "Mobile Phone",
+      "description" : "Mobile phone number of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "numberOfEmployees" : {
+      "title" : "Number of Employees",
+      "description" : "Number of employees at the lead's company.",
+      "lightning:type" : "lightning__integerType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "phone" : {
+      "title" : "Phone",
+      "description" : "Primary phone number of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "postalCode" : {
+      "title" : "Zip/Postal Code",
+      "description" : "Zip or postal code for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "rating" : {
+      "title" : "Rating",
+      "description" : "Rating of the lead (e.g., \"Hot\", \"Warm\", \"Cold\"). Must be a valid picklist API name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "state" : {
+      "title" : "State/Province",
+      "description" : "State or province for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "status" : {
+      "title" : "Lead Status",
+      "description" : "Current status of the lead (e.g., \"Open - Not Contacted\", \"Working - Contacted\"). Must be a valid picklist API name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "street" : {
+      "title" : "Street",
+      "description" : "Street address for the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "title" : {
+      "title" : "Title",
+      "description" : "Job title of the lead.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "website" : {
+      "title" : "Website",
+      "description" : "Website of the lead or their company.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}
